@@ -33,7 +33,7 @@ git add .
 git commit -m "Initial commit: Love Journey Website"
 
 # 4. Link to your GitHub repo (Replace URL with your actual repo URL)
-git remote add origin https://github.com/<YOUR_USERNAME>/<REPO_NAME>.git
+git remote add origin https://github.com/pk1997/our-story.git
 
 # 5. Push to main branch
 git branch -M main
@@ -55,3 +55,13 @@ npm run deploy
 5.  Click **Save**.
 
 Your site will be live at the link shown in the settings! 🚀
+
+## Troubleshooting: Permission Denied (403)
+If you see an error like `Permission to ... denied to ...`, it means your computer is remembering an old GitHub account.
+
+**Fix:**
+Run this command to force the correct username (replace placeholders):
+```bash
+git remote set-url origin https://<YOUR_GITHUB_USERNAME>@github.com/<YOUR_GITHUB_USERNAME>/<REPO_NAME>.git
+```
+Then try pushing again. You may be asked for your password (use a Personal Access Token if you have 2FA enabled).

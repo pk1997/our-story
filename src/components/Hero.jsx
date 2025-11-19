@@ -119,7 +119,7 @@ const Hero = () => {
               </div>
               <h3 className="font-display font-bold text-xl mb-2 text-center uppercase">Elements Restobar</h3>
               <p className="font-sans text-sm text-gray-600 text-center leading-relaxed px-4">
-                Lunch, nerves, and a promise. Fish for me, mushroom fry for her. I knew this was it.
+                Lunch, nerves, and a promise. Two different worlds on a plate, but one shared future. I knew this was it.
               </p>
             </motion.div>
 

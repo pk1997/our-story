@@ -23,7 +23,7 @@ const events = [
   {
     title: "Elements Restobar",
     date: "24th May, 2025",
-    description: "Lunch, nerves, and laughter. Fish for him, mushroom fry for her. The moment we both knew.",
+    description: "Lunch, nerves, and laughter. A simple meal turned into a lifetime of memories. The moment we both knew.",
     color: "bg-yellow-100",
     headerColor: "bg-yellow-400",
     borderColor: "border-yellow-400",
