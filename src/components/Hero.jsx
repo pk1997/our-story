@@ -1,18 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Video, Plane, Coffee, Code, Wind } from 'lucide-react';
 import { getAssetUrl } from '../utils';
 
 const Hero = () => {
   return (
     <section className="min-h-screen bg-bg-cream relative overflow-hidden border-t-neo border-black">
-      {/* Background Elements - Abstract Shapes instead of Emojis */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none opacity-20">
-        <div className="absolute top-10 left-10 w-20 h-20 border-4 border-electric-blue rounded-full animate-float-slow"></div>
-        <div className="absolute top-20 right-20 w-16 h-16 bg-vibrant-orange rotate-45 animate-float-medium"></div>
-        <div className="absolute bottom-32 left-1/4 w-24 h-24 border-4 border-deep-purple animate-pulse-slow"></div>
-        <div className="absolute top-1/3 right-10 w-12 h-12 bg-primary-red rounded-full animate-bounce-slow"></div>
-        <div className="absolute bottom-10 left-10 w-32 h-32 border-4 border-black rotate-12 animate-float-fast"></div>
+      {/* Background Elements - Decorative Custom Icons */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none opacity-15">
+        <img src={getAssetUrl("/assets/icons/heart.png")} alt="" className="absolute top-10 left-10 w-20 h-20 animate-float-slow" />
+        <img src={getAssetUrl("/assets/icons/plane.png")} alt="" className="absolute top-20 right-20 w-16 h-16 rotate-12 animate-float-medium" />
+        <img src={getAssetUrl("/assets/icons/coffee.png")} alt="" className="absolute bottom-32 left-1/4 w-24 h-24 -rotate-12 animate-pulse-slow" />
+        <img src={getAssetUrl("/assets/icons/camera.png")} alt="" className="absolute top-1/3 right-10 w-12 h-12 animate-bounce-slow" />
+        <img src={getAssetUrl("/assets/icons/map.png")} alt="" className="absolute bottom-10 right-1/4 w-32 h-32 rotate-45 animate-float-fast" />
+        <img src={getAssetUrl("/assets/icons/gem.png")} alt="" className="absolute top-1/2 left-20 w-16 h-16 -rotate-6 animate-pulse-slow" />
       </div>
 
       <div className="container mx-auto px-4 py-20 relative z-10">

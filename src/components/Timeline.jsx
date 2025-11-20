@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Video, Plane, Utensils, Gem, Phone, Heart, BookOpen } from 'lucide-react';
+import { getAssetUrl } from '../utils';
 
 const events = [
   {
@@ -10,7 +10,7 @@ const events = [
     color: "bg-white",
     headerColor: "bg-electric-blue",
     borderColor: "border-electric-blue",
-    icon: Video,
+    iconSrc: "/assets/icons/laptop.png",
   },
   {
     title: "First Meeting",
@@ -19,7 +19,7 @@ const events = [
     color: "bg-white",
     headerColor: "bg-vibrant-orange",
     borderColor: "border-vibrant-orange",
-    icon: Plane,
+    iconSrc: "/assets/icons/plane.png",
   },
   {
     title: "Elements Restobar",
@@ -28,7 +28,7 @@ const events = [
     color: "bg-white",
     headerColor: "bg-primary-red",
     borderColor: "border-primary-red",
-    icon: Utensils,
+    iconSrc: "/assets/icons/coffee.png",
   },
   {
     title: "It's Official",
@@ -37,7 +37,7 @@ const events = [
     color: "bg-white",
     headerColor: "bg-deep-purple",
     borderColor: "border-deep-purple",
-    icon: Gem,
+    iconSrc: "/assets/icons/gem.png",
   },
   {
     title: "The Long Distance Begins",
@@ -46,7 +46,7 @@ const events = [
     color: "bg-white",
     headerColor: "bg-forest-green",
     borderColor: "border-forest-green",
-    icon: Phone,
+    iconSrc: "/assets/icons/laptop.png",
   },
   {
     title: "The Reunion",
@@ -55,7 +55,7 @@ const events = [
     color: "bg-white",
     headerColor: "bg-primary-red",
     borderColor: "border-primary-red",
-    icon: Heart,
+    iconSrc: "/assets/icons/heart.png",
   },
   {
     title: "To Be Continued...",
@@ -64,7 +64,7 @@ const events = [
     color: "bg-white",
     headerColor: "bg-black",
     borderColor: "border-black",
-    icon: BookOpen,
+    iconSrc: "/assets/icons/map.png",
   }
 ];
 
@@ -165,16 +165,16 @@ const Timeline = () => {
                     
                     {/* Icon Watermark */}
                     <div className="absolute -bottom-4 -right-4 opacity-5 transform rotate-12">
-                      <event.icon size={120} strokeWidth={1} />
+                      <img src={getAssetUrl(event.iconSrc)} alt="" className="w-30 h-30" />
                     </div>
                   </div>
 
                   {/* Floating Icon Badge */}
                   <motion.div 
                     whileHover={{ scale: 1.1, rotate: 15 }}
-                    className={`absolute ${index % 2 === 1 ? '-left-8' : '-right-8'} -top-8 w-16 h-16 ${event.headerColor} border-4 border-black flex items-center justify-center shadow-[4px_4px_0_#000] z-30`}
+                    className={`absolute ${index % 2 === 1 ? '-left-8' : '-right-8'} -top-8 w-16 h-16 ${event.headerColor} border-4 border-black flex items-center justify-center shadow-[4px_4px_0_#000] z-30 p-2`}
                   >
-                    <event.icon className="text-white" size={32} strokeWidth={2.5} />
+                    <img src={getAssetUrl(event.iconSrc)} alt={event.title} className="w-full h-full object-contain" />
                   </motion.div>
                 </motion.div>
               </div>
