@@ -8,7 +8,10 @@ export default {
     extend: {
       colors: {
         'bg-cream': '#FDFBF7',
-        'primary-red': '#FF4D4D',
+        'electric-blue': '#0000FF',
+        'vibrant-orange': '#FF4D00',
+        'deep-purple': '#1A0B2E',
+        'primary-red': '#FF3333',
         'forest-green': '#2D4A3E',
       },
       boxShadow: {
