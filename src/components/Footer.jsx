@@ -23,7 +23,8 @@ const Footer = () => {
             </div>
             <h4 className="font-display font-black text-4xl mb-4 uppercase tracking-tighter leading-none mt-4">Pavan & Sindhu</h4>
             <ul className="space-y-2 font-mono text-sm font-bold uppercase tracking-wide text-gray-600 border-t-2 border-black pt-4 border-dashed">
-              <li className="flex items-center gap-2">
+              <li className="flex items-center justify-between">
+                <span>Davanagere</span>
                 <span className="text-xs bg-black text-white px-2 py-0.5">IN</span>
               </li>
               <li className="flex items-center justify-between">

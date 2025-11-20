@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Terminal } from 'lucide-react';
 import Hero from './components/Hero';
 import Timeline from './components/Timeline';
 import Gallery from './components/Gallery';
@@ -10,6 +10,8 @@ import Marquee from './components/Marquee';
 import ProgressTracker from './components/ProgressTracker';
 import FinalReward from './components/FinalReward';
 import MenuLink from './components/MenuLink';
+import LoveTerminal from './components/LoveTerminal';
+import LoveBot from './components/LoveBot';
 
 const menuItems = [
   { 
@@ -47,6 +49,27 @@ const menuItems = [
 function App() {
   const [selectedTile, setSelectedTile] = useState(null);
   const [activeHover, setActiveHover] = useState(null);
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
+  const [unlockedSections, setUnlockedSections] = useState(['hero', 'timeline', 'ending']);
+
+  const unlockSection = (sectionId) => {
+    if (!unlockedSections.includes(sectionId)) {
+      setUnlockedSections(prev => [...prev, sectionId]);
+      return true;
+    }
+    return false;
+  };
+
+  // Easter egg trigger: Press '`' (backtick) to toggle terminal
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === '`') {
+        setIsTerminalOpen(prev => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const renderDetailView = () => {
     switch (selectedTile) {
@@ -79,6 +102,11 @@ function App() {
   return (
     <div className={`min-h-screen flex flex-col transition-colors duration-500 ease-in-out ${getBackgroundColor()}`}>
       <Marquee />
+      <LoveTerminal 
+        isOpen={isTerminalOpen} 
+        onClose={() => setIsTerminalOpen(false)} 
+        onUnlock={unlockSection}
+      />
       
       <AnimatePresence mode="wait">
         {!selectedTile ? (
@@ -103,7 +131,7 @@ function App() {
               </div>
 
               <div className="flex flex-col gap-0">
-                {menuItems.map((item, index) => (
+                {menuItems.filter(item => unlockedSections.includes(item.id)).map((item, index) => (
                   <MenuLink 
                     key={item.id}
                     item={item}
@@ -155,6 +183,23 @@ function App() {
       {/* Hidden Messages Hunt Components */}
       <ProgressTracker />
       <FinalReward />
+      
+      {/* Terminal Trigger Button (Subtle) */}
+      {/* Terminal Trigger Button */}
+      <motion.button 
+        onClick={() => setIsTerminalOpen(true)}
+        className="fixed bottom-6 left-6 z-50 bg-black/80 backdrop-blur-sm text-green-500 p-3 rounded-full shadow-lg border border-green-500/30 md:opacity-50 md:hover:opacity-100 transition-all"
+        title="Open Terminal"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1, type: "spring" }}
+      >
+        <Terminal size={24} />
+      </motion.button>
+      
+      <LoveBot />
     </div>
   );
 }
