@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Video, Plane, Coffee, Code, Wind } from 'lucide-react';
+import { getAssetUrl } from '../utils';
 
 const Hero = () => {
   return (
@@ -46,7 +47,7 @@ const Hero = () => {
             viewport={{ once: true }}
             className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-96 opacity-40"
           >
-            <img src="/assets/dublin_davanagere_map.png" alt="Map" className="w-full" />
+            <img src={getAssetUrl("/assets/dublin_davanagere_map.png")} alt="Map" className="w-full" />
           </motion.div>
 
           {/* Left Column: The Story */}
@@ -63,7 +64,7 @@ const Hero = () => {
                 <motion.img 
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5 }}
-                  src="/assets/polaroid_video_call.png" 
+                  src={getAssetUrl("/assets/polaroid_video_call.png")} 
                   alt="First Video Call" 
                   className="w-full h-full object-cover" 
                 />
@@ -86,7 +87,7 @@ const Hero = () => {
                 <motion.img 
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5 }}
-                  src="/assets/polaroid_airport_arrival.png" 
+                  src={getAssetUrl("/assets/polaroid_airport_arrival.png")} 
                   alt="Airport Arrival" 
                   className="w-full h-full object-cover" 
                 />
@@ -112,7 +113,7 @@ const Hero = () => {
                 <motion.img 
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5 }}
-                  src="/assets/polaroid_coffee_date.png" 
+                  src={getAssetUrl("/assets/polaroid_coffee_date.png")} 
                   alt="Hotel Elements Date" 
                   className="w-full h-full object-cover" 
                 />
@@ -135,7 +136,7 @@ const Hero = () => {
                 <motion.img 
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5 }}
-                  src="/assets/polaroid_official.png" 
+                  src={getAssetUrl("/assets/polaroid_official.png")} 
                   alt="Made it Official" 
                   className="w-full h-full object-cover" 
                 />

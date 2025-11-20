@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Lock, Unlock, MapPin } from 'lucide-react';
+import { getAssetUrl } from '../utils';
 
 const travelStories = [
   {
@@ -14,32 +15,32 @@ const travelStories = [
       {
         caption: "Railway Station Reunion",
         description: "She was waiting with her bike. My heart skipped when I saw her smile.",
-        image: "/assets/placeholder_railway.png"
+        image: getAssetUrl("/assets/placeholder_railway.png")
       },
       {
         caption: "The Long Ride",
         description: "Wind in our hair, her arms around me. The city blurred, but this moment was crystal clear.",
-        image: "/assets/placeholder_bike.png"
+        image: getAssetUrl("/assets/placeholder_bike.png")
       },
       {
         caption: "Coffee & Courage",
         description: "Our first hug over coffee. Nervous hands, racing hearts, and the world fading away.",
-        image: "/assets/placeholder_coffee.png"
+        image: getAssetUrl("/assets/placeholder_coffee.png")
       },
       {
         caption: "Temple Prayers",
         description: "Side by side, we shared our dreams, our fears, our everything. This felt sacred.",
-        image: "/assets/placeholder_temple.png"
+        image: getAssetUrl("/assets/placeholder_temple.png")
       },
       {
         caption: "Meeting Her World",
         description: "Her brothers, her friends, lunch filled with laughter. I was becoming part of her story.",
-        image: "/assets/placeholder_family.png"
+        image: getAssetUrl("/assets/placeholder_family.png")
       },
       {
         caption: "The Goodbye Kiss",
         description: "Tears streaming down both our faces. I kissed her forehead and whispered, 'I'll be back.' She believed me.",
-        image: "/assets/placeholder_goodbye.png"
+        image: getAssetUrl("/assets/placeholder_goodbye.png")
       }
     ]
   },
@@ -54,32 +55,32 @@ const travelStories = [
       {
         caption: "Red Roses & The Official Proposal",
         description: "I showed up at her hotel with red roses. She said yes, officially. Our secret was just beginning.",
-        image: "/assets/mysore_roses.png"
+        image: getAssetUrl("/assets/mysore_roses.png")
       },
       {
         caption: "Meeting My Friends",
         description: "Restaurant dinner with my closest friends. She fit right in, laughing and sharing stories.",
-        image: "/assets/mysore_friends.png"
+        image: getAssetUrl("/assets/mysore_friends.png")
       },
       {
         caption: "Riding Under the Stars",
         description: "After dinner, riding back on the Activa. The Mysore night air, her arms around me, everything felt perfect.",
-        image: "/assets/mysore_night.png"
+        image: getAssetUrl("/assets/mysore_night.png")
       },
       {
         caption: "Late Night College Tour",
         description: "Showed her my college under the stars. Every corner had a story, now she was part of them.",
-        image: "/assets/mysore_college.png"
+        image: getAssetUrl("/assets/mysore_college.png")
       },
       {
         caption: "Campus Memories",
         description: "'This is where I became me,' I told her. 'And now you're here.'",
-        image: "/assets/mysore_campus.png"
+        image: getAssetUrl("/assets/mysore_campus.png")
       },
       {
         caption: "Our First Night Together",
         description: "Back at the hotel, all walls down. The night we truly became 'us.'",
-        image: "/assets/mysore_hotel.png"
+        image: getAssetUrl("/assets/mysore_hotel.png")
       }
     ]
   },
@@ -94,32 +95,32 @@ const travelStories = [
       {
         caption: "Resort Arrival",
         description: "Arriving at our beautiful hill resort. Lush greenery and excitement for our getaway.",
-        image: "/assets/chikmagalur_resort.png"
+        image: getAssetUrl("/assets/chikmagalur_resort.png")
       },
       {
         caption: "",
         description: "",
-        image: "/assets/chikmagalur_shower.png"
+        image: getAssetUrl("/assets/chikmagalur_shower.png")
       },
       {
         caption: "",
         description: "",
-        image: "/assets/chikmagalur_jacuzzi.png"
+        image: getAssetUrl("/assets/chikmagalur_jacuzzi.png")
       },
       {
         caption: "Romantic Dinner",
         description: "Candlelit dinner with a view. Holding hands and celebrating us.",
-        image: "/assets/chikmagalur_dinner.png"
+        image: getAssetUrl("/assets/chikmagalur_dinner.png")
       },
       {
         caption: "Moonlit Walk",
         description: "Walking hand in hand through the resort gardens under the stars.",
-        image: "/assets/chikmagalur_walk.png"
+        image: getAssetUrl("/assets/chikmagalur_walk.png")
       },
       {
         caption: "Morning Cycling",
         description: "Cycling through the coffee plantations in the fresh morning air.",
-        image: "/assets/chikmagalur_cycling.png"
+        image: getAssetUrl("/assets/chikmagalur_cycling.png")
       }
     ]
   },

@@ -1,36 +1,37 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, Sparkles } from 'lucide-react';
+import { getAssetUrl } from '../utils';
 
 const Gallery = () => {
   const [secretRevealed, setSecretRevealed] = useState(false);
 
   const memories = [
     // Story 1: The Beginning (Davanagere)
-    { id: 1, src: "/assets/placeholder_railway.png", alt: "Railway Reunion", span: "col-span-1 md:col-span-2 row-span-2", caption: "Where it all began" },
-    { id: 2, src: "/assets/placeholder_bike.png", alt: "Activa Ride", span: "col-span-1 row-span-1", caption: "Long rides" },
-    { id: 3, src: "/assets/placeholder_coffee.png", alt: "First Hug", span: "col-span-1 row-span-1", caption: "That first hug" },
-    { id: 4, src: "/assets/placeholder_temple.png", alt: "Temple Prayers", span: "col-span-1 row-span-1", caption: "Blessings" },
-    { id: 5, src: "/assets/placeholder_family.png", alt: "Meeting Family", span: "col-span-1 row-span-1", caption: "Family & Food" },
+    { id: 1, src: getAssetUrl("/assets/placeholder_railway.png"), alt: "Railway Reunion", span: "col-span-1 md:col-span-2 row-span-2", caption: "Where it all began" },
+    { id: 2, src: getAssetUrl("/assets/placeholder_bike.png"), alt: "Activa Ride", span: "col-span-1 row-span-1", caption: "Long rides" },
+    { id: 3, src: getAssetUrl("/assets/placeholder_coffee.png"), alt: "First Hug", span: "col-span-1 row-span-1", caption: "That first hug" },
+    { id: 4, src: getAssetUrl("/assets/placeholder_temple.png"), alt: "Temple Prayers", span: "col-span-1 row-span-1", caption: "Blessings" },
+    { id: 5, src: getAssetUrl("/assets/placeholder_family.png"), alt: "Meeting Family", span: "col-span-1 row-span-1", caption: "Family & Food" },
     
     // Story 2: Mysore Magic
-    { id: 6, src: "/assets/mysore_roses.png", alt: "Mysore Proposal", span: "col-span-1 md:col-span-2 row-span-2", caption: "The Proposal 🌹" },
-    { id: 7, src: "/assets/mysore_friends.png", alt: "Friends Dinner", span: "col-span-1 row-span-1", caption: "Friends & Fun" },
-    { id: 8, src: "/assets/mysore_night.png", alt: "Night Ride", span: "col-span-1 row-span-1", caption: "Night Skies" },
-    { id: 9, src: "/assets/mysore_college.png", alt: "College Tour", span: "col-span-1 row-span-1", caption: "Walking Down Memory Lane" },
-    { id: 10, src: "/assets/mysore_campus.png", alt: "Campus Memories", span: "col-span-1 row-span-1", caption: "Where I became Me" },
-    { id: 11, src: "/assets/mysore_hotel.png", alt: "First Night", span: "col-span-1 md:col-span-2 row-span-1", caption: "Just Us" },
+    { id: 6, src: getAssetUrl("/assets/mysore_roses.png"), alt: "Mysore Proposal", span: "col-span-1 md:col-span-2 row-span-2", caption: "The Proposal 🌹" },
+    { id: 7, src: getAssetUrl("/assets/mysore_friends.png"), alt: "Friends Dinner", span: "col-span-1 row-span-1", caption: "Friends & Fun" },
+    { id: 8, src: getAssetUrl("/assets/mysore_night.png"), alt: "Night Ride", span: "col-span-1 row-span-1", caption: "Night Skies" },
+    { id: 9, src: getAssetUrl("/assets/mysore_college.png"), alt: "College Tour", span: "col-span-1 row-span-1", caption: "Walking Down Memory Lane" },
+    { id: 10, src: getAssetUrl("/assets/mysore_campus.png"), alt: "Campus Memories", span: "col-span-1 row-span-1", caption: "Where I became Me" },
+    { id: 11, src: getAssetUrl("/assets/mysore_hotel.png"), alt: "First Night", span: "col-span-1 md:col-span-2 row-span-1", caption: "Just Us" },
 
     // Story 3: Chikmagalur Escape
-    { id: 12, src: "/assets/chikmagalur_resort.png", alt: "Resort Arrival", span: "col-span-1 row-span-1", caption: "Escape to the Hills" },
-    { id: 13, src: "/assets/chikmagalur_shower.png", alt: "Shower", span: "col-span-1 row-span-1", caption: "Intimate Moments" },
-    { id: 14, src: "/assets/chikmagalur_jacuzzi.png", alt: "Jacuzzi", span: "col-span-1 md:col-span-2 row-span-2", caption: "Jacuzzi Talks 🛁" },
-    { id: 15, src: "/assets/chikmagalur_dinner.png", alt: "Romantic Dinner", span: "col-span-1 row-span-1", caption: "Dinner Date" },
-    { id: 16, src: "/assets/chikmagalur_walk.png", alt: "Moonlit Walk", span: "col-span-1 row-span-1", caption: "Under the Stars" },
-    { id: 17, src: "/assets/chikmagalur_cycling.png", alt: "Morning Cycling", span: "col-span-1 md:col-span-2 row-span-1", caption: "Morning Breeze" },
+    { id: 12, src: getAssetUrl("/assets/chikmagalur_resort.png"), alt: "Resort Arrival", span: "col-span-1 row-span-1", caption: "Escape to the Hills" },
+    { id: 13, src: getAssetUrl("/assets/chikmagalur_shower.png"), alt: "Shower", span: "col-span-1 row-span-1", caption: "Intimate Moments" },
+    { id: 14, src: getAssetUrl("/assets/chikmagalur_jacuzzi.png"), alt: "Jacuzzi", span: "col-span-1 md:col-span-2 row-span-2", caption: "Jacuzzi Talks 🛁" },
+    { id: 15, src: getAssetUrl("/assets/chikmagalur_dinner.png"), alt: "Romantic Dinner", span: "col-span-1 row-span-1", caption: "Dinner Date" },
+    { id: 16, src: getAssetUrl("/assets/chikmagalur_walk.png"), alt: "Moonlit Walk", span: "col-span-1 row-span-1", caption: "Under the Stars" },
+    { id: 17, src: getAssetUrl("/assets/chikmagalur_cycling.png"), alt: "Morning Cycling", span: "col-span-1 md:col-span-2 row-span-1", caption: "Morning Breeze" },
     
     // Story 1 Final (Goodbye)
-    { id: 18, src: "/assets/placeholder_goodbye.png", alt: "Goodbye Kiss", span: "col-span-1 row-span-1", caption: "Until Next Time" },
+    { id: 18, src: getAssetUrl("/assets/placeholder_goodbye.png"), alt: "Goodbye Kiss", span: "col-span-1 row-span-1", caption: "Until Next Time" },
   ];
 
   return (
