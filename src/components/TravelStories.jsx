@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Lock, Unlock, MapPin, X, FolderOpen, FileText, Image as ImageIcon } from 'lucide-react';
 import { getAssetUrl } from '../utils';
+import HiddenMessage from './HiddenMessage';
 
 const travelStories = [
   {
@@ -269,7 +270,7 @@ const TravelStories = () => {
               animate={{ opacity: 1, y: 0 }}
               className="max-w-6xl mx-auto"
             >
-              <div className="text-center mb-16">
+              <div className="text-center mb-16 relative">
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
@@ -282,6 +283,14 @@ const TravelStories = () => {
                 <div className="inline-block bg-black text-white px-4 py-1 font-mono text-sm uppercase">
                   File Status: Unclassified
                 </div>
+                
+                {/* Hidden Message #3 */}
+                <HiddenMessage 
+                  id={3}
+                  title="Adventures Together 🌍"
+                  message="The best souvenir from all our trips isn't a magnet or a keychain—it's the memories we've made together."
+                  className="absolute top-0 right-[10%] z-20"
+                />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

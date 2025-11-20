@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import HiddenMessage from './HiddenMessage';
 
 const Marquee = () => {
   return (
@@ -34,8 +35,15 @@ const Marquee = () => {
           </div>
         ))}
       </motion.div>
+      
+      {/* Hidden Message #5 */}
+      <HiddenMessage 
+        id={5}
+        title="Forever & Always ∞"
+        message="Like this scrolling text, my love for you goes on and on and on... endless, consistent, and always there."
+        className="absolute top-1/2 right-8 -translate-y-1/2 z-[60] text-white"
+      />
     </div>
   );
 };
-
 export default Marquee;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { getAssetUrl } from '../utils';
+import HiddenMessage from './HiddenMessage';
 
 const Hero = () => {
   return (
@@ -223,7 +224,7 @@ const Hero = () => {
               <div className="h-1 bg-black flex-1"></div>
             </div>
              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-black text-white p-8 border-4 border-black shadow-[8px_8px_0_#666]">
+                <div className="bg-black text-white p-8 border-4 border-black shadow-[8px_8px_0_#666] relative">
                   <h3 className="text-3xl font-black uppercase mb-6 border-b-4 border-electric-blue pb-2 inline-block">His World</h3>
                   <ul className="space-y-4">
                     <li className="flex items-center gap-3 text-xl font-bold"><span className="text-2xl">👨‍💻</span> Software Engineer</li>
@@ -232,6 +233,14 @@ const Hero = () => {
                     <li className="flex items-center gap-3 text-xl font-bold text-gray-400"><span className="text-2xl">🍻</span> Friends</li>
                     <li className="flex items-center gap-3 text-xl font-bold text-electric-blue"><span className="text-2xl">💍</span> My Wife</li>
                   </ul>
+                  
+                  {/* Hidden Message #4 */}
+                  <HiddenMessage 
+                    id={4}
+                    title="Two Worlds, One Love 🌎"
+                    message="You showed me your world - your family, your friends, your favorite places. And I shared mine with you. Now we're building a new world together, one that's uniquely ours. A world filled with inside jokes, shared dreams, and endless love."
+                    className="absolute bottom-4 right-4 z-30"
+                  />
                 </div>
                 <div className="bg-white text-black p-8 border-4 border-black shadow-neo">
                   <h3 className="text-3xl font-black uppercase mb-6 border-b-4 border-vibrant-orange pb-2 inline-block">Her World</h3>

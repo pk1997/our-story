@@ -24,28 +24,6 @@ const Footer = () => {
             <h4 className="font-display font-black text-4xl mb-4 uppercase tracking-tighter leading-none mt-4">Pavan & Sindhu</h4>
             <ul className="space-y-2 font-mono text-sm font-bold uppercase tracking-wide text-gray-600 border-t-2 border-black pt-4 border-dashed">
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-vibrant-orange rounded-full"></span>
-                Est. 2025
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-electric-blue rounded-full"></span>
-                Love Journey
-              </li>
-            </ul>
-          </motion.div>
-          
-          {/* Card 2: Locations */}
-          <motion.div 
-            whileHover={{ translate: "4px 4px", boxShadow: "0px 0px 0px #000" }}
-            className="bg-white border-4 border-black shadow-neo p-8 relative group"
-          >
-             <div className="absolute -top-4 -left-4 bg-vibrant-orange text-white px-4 py-1 font-bold uppercase border-2 border-black shadow-[4px_4px_0_#000] rotate-[2deg] group-hover:rotate-0 transition-transform">
-              Locations
-            </div>
-            <h4 className="font-display font-black text-4xl mb-4 uppercase tracking-tighter leading-none mt-4">Global Love</h4>
-            <ul className="space-y-2 font-mono text-sm font-bold uppercase tracking-wide text-gray-600 border-t-2 border-black pt-4 border-dashed">
-              <li className="flex items-center justify-between">
-                <span>Davanagere</span>
                 <span className="text-xs bg-black text-white px-2 py-0.5">IN</span>
               </li>
               <li className="flex items-center justify-between">
@@ -57,6 +35,28 @@ const Footer = () => {
                 <span>∞</span>
               </li>
             </ul>
+          </motion.div>
+
+
+
+          {/* Card 2: The Vibe */}
+          <motion.div 
+            whileHover={{ translate: "4px 4px", boxShadow: "0px 0px 0px #000" }}
+            className="bg-vibrant-orange text-white border-4 border-black shadow-neo p-8 relative group"
+          >
+            <div className="absolute -top-4 -left-4 bg-white text-black px-4 py-1 font-bold uppercase border-2 border-black shadow-[4px_4px_0_#000] rotate-[1deg] group-hover:rotate-0 transition-transform">
+              The Vibe
+            </div>
+            <div className="flex flex-wrap gap-2 mt-4">
+              {['Love', 'Laughter', 'Travel', 'Food', 'Tech', 'Dreams'].map((tag, i) => (
+                <span key={i} className="bg-black text-white px-3 py-1 font-mono text-xs font-bold uppercase border border-white">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div className="mt-6 text-6xl font-black opacity-20 absolute bottom-4 right-4 rotate-[-10deg]">
+              2025
+            </div>
           </motion.div>
 
           {/* Card 3: Promise */}

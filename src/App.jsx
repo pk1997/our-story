@@ -7,6 +7,8 @@ import Gallery from './components/Gallery';
 import TravelStories from './components/TravelStories';
 import Footer from './components/Footer';
 import Marquee from './components/Marquee';
+import ProgressTracker from './components/ProgressTracker';
+import FinalReward from './components/FinalReward';
 
 const tiles = [
   { 
@@ -171,6 +173,10 @@ function App() {
           </motion.div>
         )}
       </AnimatePresence>
+      
+      {/* Hidden Messages Hunt Components */}
+      <ProgressTracker />
+      <FinalReward />
     </div>
   );
 }

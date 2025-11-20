@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, Sparkles, Camera, ZoomIn } from 'lucide-react';
 import { getAssetUrl } from '../utils';
+import HiddenMessage from './HiddenMessage';
 
 const Gallery = () => {
   const [secretRevealed, setSecretRevealed] = useState(false);
@@ -41,7 +42,7 @@ const Gallery = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-16 relative"
         >
           <div className="inline-block bg-black text-white px-4 py-1 font-bold uppercase tracking-widest mb-4 rotate-1 border-2 border-electric-blue shadow-[4px_4px_0_#0000FF]">
             Captured Moments
@@ -49,6 +50,14 @@ const Gallery = () => {
           <h2 className="text-5xl md:text-7xl font-display font-black text-black uppercase tracking-tighter leading-none">
             Memory Wall
           </h2>
+          
+          {/* Hidden Message #2 */}
+          <HiddenMessage 
+            id={2}
+            title="Every Photo Tells Our Story 📸"
+            message="From blurry selfies to perfect portraits, every picture captures a moment of our love growing stronger."
+            className="absolute -bottom-4 right-[10%] z-20"
+          />
         </motion.div>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto auto-rows-[200px]">

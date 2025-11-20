@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { getAssetUrl } from '../utils';
+import HiddenMessage from './HiddenMessage';
 
 const events = [
   {
@@ -56,6 +57,7 @@ const events = [
     headerColor: "bg-primary-red",
     borderColor: "border-primary-red",
     iconSrc: "/assets/icons/heart.png",
+    hasHiddenMessage: true,  // Mark this card as having a hidden message
   },
   {
     title: "To Be Continued...",
@@ -162,6 +164,16 @@ const Timeline = () => {
                   <div className="p-8 relative overflow-hidden">
                     <h4 className="font-display font-black text-2xl mb-4 uppercase leading-none">{event.title}</h4>
                     <p className="font-sans text-base font-medium text-gray-800 leading-relaxed">{event.description}</p>
+                    
+                    {/* Hidden Message #1 - Only in "The Reunion" card */}
+                    {event.hasHiddenMessage && (
+                      <HiddenMessage 
+                        id={1}
+                        title="Worth Every Mile 🛫"
+                        message="Distance means so little when someone means so much. Every flight, every mile, every minute apart was worth it for this moment."
+                        className="absolute bottom-4 right-4 z-20"
+                      />
+                    )}
                     
                     {/* Icon Watermark */}
                     <div className="absolute -bottom-4 -right-4 opacity-5 transform rotate-12">
