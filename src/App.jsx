@@ -12,37 +12,44 @@ import FinalReward from './components/FinalReward';
 import MenuLink from './components/MenuLink';
 import LoveTerminal from './components/LoveTerminal';
 import LoveBot from './components/LoveBot';
+import LoveJar from './components/love-jar/LoveJar';
 
 const menuItems = [
-  { 
-    id: 'hero', 
-    title: 'Our Story', 
-    color: 'bg-electric-blue', 
+  {
+    id: 'hero',
+    title: 'Our Story',
+    color: 'bg-electric-blue',
     image: '/assets/cover_story_v4.png'
   },
-  { 
-    id: 'timeline', 
-    title: 'Timeline', 
-    color: 'bg-vibrant-orange', 
+  {
+    id: 'timeline',
+    title: 'Timeline',
+    color: 'bg-vibrant-orange',
     image: '/assets/cover_timeline_v4.png'
   },
-  { 
-    id: 'gallery', 
-    title: 'Gallery', 
-    color: 'bg-deep-purple', 
+  {
+    id: 'gallery',
+    title: 'Gallery',
+    color: 'bg-deep-purple',
     image: '/assets/cover_gallery_v4.png'
   },
-  { 
-    id: 'fun', 
-    title: 'Travels', 
-    color: 'bg-primary-red', 
+  {
+    id: 'fun',
+    title: 'Travels',
+    color: 'bg-primary-red',
     image: '/assets/cover_travel_v4.png'
   },
-  { 
-    id: 'ending', 
-    title: 'Forever', 
-    color: 'bg-forest-green', 
+  {
+    id: 'ending',
+    title: 'Forever',
+    color: 'bg-forest-green',
     image: '/assets/cover_forever_v4.png'
+  },
+  {
+    id: 'letters',
+    title: 'Love Jar',
+    color: 'bg-[#e11d48]',
+    image: '/assets/cover_story_v4.png'
   },
 ];
 
@@ -50,7 +57,7 @@ function App() {
   const [selectedTile, setSelectedTile] = useState(null);
   const [activeHover, setActiveHover] = useState(null);
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
-  const [unlockedSections, setUnlockedSections] = useState(['hero', 'timeline', 'ending']);
+  const [unlockedSections, setUnlockedSections] = useState(['hero', 'timeline', 'ending', 'letters']);
 
   const unlockSection = (sectionId) => {
     if (!unlockedSections.includes(sectionId)) {
@@ -83,6 +90,8 @@ function App() {
         return <TravelStories />;
       case 'ending':
         return <Footer />;
+      case 'letters':
+        return <LoveJar />;
       default:
         return null;
     }
@@ -102,12 +111,12 @@ function App() {
   return (
     <div className={`min-h-screen flex flex-col transition-colors duration-500 ease-in-out ${getBackgroundColor()}`}>
       <Marquee />
-      <LoveTerminal 
-        isOpen={isTerminalOpen} 
-        onClose={() => setIsTerminalOpen(false)} 
+      <LoveTerminal
+        isOpen={isTerminalOpen}
+        onClose={() => setIsTerminalOpen(false)}
         onUnlock={unlockSection}
       />
-      
+
       <AnimatePresence mode="wait">
         {!selectedTile ? (
           <motion.div
@@ -119,8 +128,8 @@ function App() {
             className="flex-1 flex flex-col justify-center relative overflow-hidden px-4 md:px-20 py-10"
           >
             {/* Background Pattern Overlay */}
-            <div className="absolute inset-0 opacity-5 pointer-events-none" 
-                 style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
+            <div className="absolute inset-0 opacity-5 pointer-events-none"
+              style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
             </div>
 
             {/* Menu List */}
@@ -132,7 +141,7 @@ function App() {
 
               <div className="flex flex-col gap-0">
                 {menuItems.filter(item => unlockedSections.includes(item.id)).map((item, index) => (
-                  <MenuLink 
+                  <MenuLink
                     key={item.id}
                     item={item}
                     index={index}
@@ -149,7 +158,7 @@ function App() {
                   Est. 2025
                 </div>
                 <div className="font-mono text-xs font-bold uppercase tracking-widest opacity-60 text-right">
-                  Dublin • Davanagere<br/>Mysore • Chikmagalur
+                  Dublin • Davanagere<br />Mysore • Chikmagalur
                 </div>
               </div>
             </div>
@@ -179,14 +188,14 @@ function App() {
           </motion.div>
         )}
       </AnimatePresence>
-      
+
       {/* Hidden Messages Hunt Components */}
-      <ProgressTracker />
-      <FinalReward />
-      
+      {/* <ProgressTracker /> */}
+      {/* <FinalReward /> */}
+
       {/* Terminal Trigger Button (Subtle) */}
       {/* Terminal Trigger Button */}
-      <motion.button 
+      <motion.button
         onClick={() => setIsTerminalOpen(true)}
         className="fixed bottom-6 left-6 z-50 bg-black/80 backdrop-blur-sm text-green-500 p-3 rounded-full shadow-lg border border-green-500/30 md:opacity-50 md:hover:opacity-100 transition-all"
         title="Open Terminal"
@@ -198,7 +207,7 @@ function App() {
       >
         <Terminal size={24} />
       </motion.button>
-      
+
       <LoveBot />
     </div>
   );
